@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const pongInterval = 300000; // ms
 let status;
-const port = 80;
+const port = process.env.PORT || 8302;
 const ping = require('minecraft-ping');
 app.get("/", async (req, res) => {
     if (status) {
