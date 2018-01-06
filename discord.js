@@ -17,18 +17,12 @@ client.on('message', async msg => {
     const cmd = msg.content.toLowerCase().split(" ")[0].slice(config.prefix.length);
     const args = msg.content.split(" ").slice(1); 
     switch (cmd) {
-        case "topservers":
-        let topten = api.commServers.sort((s1, s2) => s1.playerCount - s2.playerCount).slice(0, 9).map(se => `  • ${se.name} (${se.playerCount} players)`).join("\n");
-        msg.channel.send(new MessageEmbed().setAuthor(client.user.username, client.user.displayAvatarURL()).setDescription(`**\`Showing Top 10 Servers:\`**\n${topten}`).setFooter("Minehut Top 10 Servers").setTimestamp(new Date()));
-        break;
-
         case "help":
         msg.channel.send(
             new MessageEmbed().setAuthor(client.user.username, client.user.displayAvatarURL()).setDescription(
 `*\`Showing all commands:\`*
 • Ping: Pong! :ping_pong:
-• Server: Show some info about a Minehut server. ${config.prefix}server <server name>
-• TopServers: View the top 10 Minehut Servers.`
+• Server: Show some info about a Minehut server. ${config.prefix}server <server name>`
             )
         );
         break;
