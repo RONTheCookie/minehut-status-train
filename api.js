@@ -95,7 +95,7 @@ class MinehutAPI {
      * @returns {MinehutServerSession}
      */
     getServerSessionByName(name) {
-        return this.servers.find("name", name);
+        return this.commServers.find("name", name);
     }
 
     /**
