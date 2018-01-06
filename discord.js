@@ -48,7 +48,7 @@ client.on('message', async msg => {
     .setTimestamp(new Date())
     .setDescription(
 `Showing info about Server ***\`${server.name}\`***!
-• Online? ${api.getServerSessionByName(args[0]!=null?`:white_check_mark: (${api.getServerSessionByName(args[0]).playerCount} players online)`:":x:")}
+• Online? ${api.getServerSessionByName(args[0])!=null?`:white_check_mark: (${api.getServerSessionByName(args[0]).playerCount} players online)`:":x:")}
 • Created At: \`${new Date(server.creation).toDateString()}\`
 • Credits Per Day: \`${server.credits_per_day}\`
 • Message of the Day: \`${server.motd}\`
