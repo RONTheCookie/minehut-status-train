@@ -41,14 +41,14 @@ client.on('message', async msg => {
             return msg.channel.send(`:x: Invalid usage! \`${config.prefix}server <server name>\``)
         }
         let server = await api.getServerByName(args[0]);
-        
+        let commServer = api.getServerSessionByName(args[0]);
         msg.channel.send(new MessageEmbed()
     .setAuthor(client.user.username, client.user.displayAvatarURL())
     .setFooter("Minehut Stats Bot")
     .setTimestamp(new Date())
     .setDescription(
 `Showing info about Server ***\`${server.name}\`***!
-• Online? ${api.getServerSessionByName(args[0])!=null?`:white_check_mark: (${api.getServerSessionByName(args[0]).playerCount} players online)`:":x:")}
+• Online? ${commServer?`:white_check_mark: (Player count: ${commServer.playerCount})`:":x:"}
 • Created At: \`${new Date(server.creation).toDateString()}\`
 • Credits Per Day: \`${server.credits_per_day}\`
 • Message of the Day: \`${server.motd}\`
