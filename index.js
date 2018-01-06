@@ -1,21 +1,24 @@
 /* Made by RONTheCookie - ronthecookie.me */
 const express = require("express");
 const app = express();
+app.set("view engine", "ejs");
 const pongInterval = 300000; // ms
 let status;
+let playercount = 0;
 const port = process.env.PORT || 8302;
 const ping = require('minecraft-ping');
 app.get("/", async (req, res) => {
     if (status) {
-        res.sendFile(__dirname+"/pages/yes.html");
+        res.render("yes", {playercount: playercount});
     } else {
-        res.sendFile(__dirname+"/pages/no.html");
+        res.sendFile(__dirname+"/views/no.html");
     }
 });
 check();
 async function check(){
     let p = await pong();
     status = p.playersOnline > 1;
+    playercount = p.playersOnline;
 }
 setInterval(check, pongInterval);
 app.listen(port, ()=>{
