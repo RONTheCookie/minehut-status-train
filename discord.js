@@ -28,7 +28,7 @@ client.on('message', async msg => {
 `*\`Showing all commands:\`*
 • Ping: Pong! :ping_pong:
 • Server: Show some info about a Minehut server. ${config.prefix}server <server name>
-• TopServers: See the top 10 Minehut Server names.`
+• TopServers: View the top 10 Minehut Servers.`
             )
         );
         break;

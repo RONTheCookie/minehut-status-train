@@ -95,7 +95,7 @@ class MinehutAPI {
      * @returns {MinehutServerSession}
      */
     getServerSessionByName(name) {
-        return this.commServers.find("name", name);
+        return this.commServers.find(cmsv => cmsv.name == name);
     }
 
     /**
