@@ -1,0 +1,23 @@
+{
+  "name": "minehut-status-train",
+  "version": "1.0.0",
+  "description": "dumb thing i made for minehut because i can",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RONTheCookie/minehut-status-train.git"
+  },
+  "author": "RONTheCookie",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/RONTheCookie/minehut-status-train/issues"
+  },
+  "homepage": "https://github.com/RONTheCookie/minehut-status-train#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "minecraft-ping": "^1.0.0"
+  }
+}
