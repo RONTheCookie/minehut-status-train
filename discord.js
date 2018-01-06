@@ -46,7 +46,7 @@ client.on('message', async msg => {
 • Created At: \`${new Date(server.creation).toDateString()}\`
 • Credits Per Day: \`${server.credits_per_day}\`
 • Message of the Day: \`${server.motd}\`
-• Visible? \`${server.visibility}\`
+• Visible? ${server.visibility?":white_check_mark:":":x:"}
     • Server Settings:
         Allow Flight? ${server.server_properties.allow_flight?":white_check_mark:":":x:"}
         Allow Nether? ${server.server_properties.allow_nether?":white_check_mark:":":x:"}
