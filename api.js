@@ -56,9 +56,25 @@ const base = "https://pocket.minehut.com";
  * @property {String} motd Message of the day - server description
  * @property {Boolean} visibility Visibility
  * @property {ServerProperties} server_properties
+ * @property {String[]} active_plugins
+ * @property {String[]} purchased_plugins
  */
 
-
+/**
+ * @typedef {Object} MinehutPlugin
+ * @property {String} _id
+ * @property {String} name
+ * @property {Number} credits
+ * @property {String} platform
+ * @property {String} description
+ * @property {String} version
+ * @property {String} file_name
+ * @property {Number} last_updated date
+ * @property {Number} created date
+ * @property {Boolean} disabled
+ * @property {String} desc_extended
+ * @property {String} config_file_name
+ */
 
 class MinehutAPI {
     constructor() {
@@ -123,15 +139,18 @@ class MinehutAPI {
             });
         });
     }
-
+    /**
+     * Get all of the plugins.
+     * @returns {Promise<Map<String, MinehutPlugin>>}
+     */
     getPlugins() {
         return new Promise((resolve, reject) => {
             request.get(base + "/plugins_public", (error, response, body) => {
                 if (error) return reject(error);
                 let plgs = JSON.parse(body).all;
-                let map = {};
-                plgs.forEach(pl => {
-                    map[pl._id] = pl;
+                let map = new Map();
+                plgs.forEach(plg => {
+                    map.set(plg._id, plg);
                 });
                 resolve(map);
             });

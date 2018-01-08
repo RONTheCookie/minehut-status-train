@@ -47,6 +47,8 @@ client.on('message', async msg => {
 • Credits Per Day: \`${server.credits_per_day}\`
 • Message of the Day: \`${server.motd}\`
 • Visible? ${server.visibility?":white_check_mark:":":x:"}
+• Active Plugins? ${server.active_plugins.map(plgID => api.plugins.get(plgID)).join(", ")}
+• Purchased Plugins? ${server.purchased_plugins.map(plgID => api.plugins.get(plgID)).join(", ")}
     • Server Settings:
         Allow Flight? ${server.server_properties.allow_flight?":white_check_mark:":":x:"}
         Allow Nether? ${server.server_properties.allow_nether?":white_check_mark:":":x:"}
