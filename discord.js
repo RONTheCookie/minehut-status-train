@@ -1,4 +1,4 @@
-const api = require("./api").api;
+const api = require("./index").api;
 const { Client, MessageEmbed, Message } = require("discord.js");
 const client = new Client();
 const config = require("./config");

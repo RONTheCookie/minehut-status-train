@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 app.set("view engine", "ejs");
-const api = require("./api").api;
+const api = require("./index").api;
 const port = process.env.PORT || 8302;
 const botInviteLink = "https://discordapp.com/api/oauth2/authorize?client_id=399245263312650241&permissions=2048&scope=bot";
 app.get("/", async (req, res) => {
