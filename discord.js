@@ -36,6 +36,7 @@ client.on('message', async msg => {
         }
         let server = await api.getServerByName(args[0]);
         let commServer = api.getServerSessionByName(args[0]);
+        if (!server) return msg.channel.send(":x: That server doesn't exist");
         msg.channel.send(new MessageEmbed()
     .setAuthor(client.user.username, client.user.displayAvatarURL())
     .setFooter("Minehut Stats Bot")
